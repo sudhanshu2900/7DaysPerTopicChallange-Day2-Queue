@@ -1,0 +1,94 @@
+PROBLEM: 
+
+Implement different operations on a queue q .
+
+Input:
+The first line of input contains an integer T denoting the no of test cases . Then T test cases follow. The first line of input contains an integer Q denoting the no of queries . Then in the next line are Q space separated queries .
+A query can be of four types 
+1. a x (Pushes an element x at the end of the queue q )
+2. b (if queue is not empty pops the front element and prints it, else prints -1)
+3. c (prints the size of the queue)
+4. d (if queue is not empty prints the front element of the queue, else prints -1)
+5. e (if queue is not empty prints the last element of the queue else prints -1)
+
+Output:
+The output for each test case will  be space separated integers denoting the results of each query . 
+----------------------------------------------------------------------------------------------------
+
+
+Input :
+        2
+        5
+        a 4 a 6 a 7 b c 
+        4
+        a 55 a 11 d e
+ 
+Output :
+        4 2
+        55 11
+
+Explanation :
+              For the first test case
+              There are five queries. Queries are performed in this order
+              1. a 4 { queue q has 4  }
+              2. a 7 {queue q has 4,7 }
+              3. a 6 {queue q has 4,7,6}
+              4. b    {pop 4 from queue q and prints it queue now has 7,6}
+              5. c    {prints the size of the queue q ie 2}
+              
+              
+ SOLUTION:
+ 
+ void push(queue<int> &q,int x)
+{
+    //Your code here
+    q.push(x);
+}
+
+
+                                              /*pop out the front element from the queue q and returns it */
+
+int pop(queue<int> &q)
+{
+   if(q.size()==0){
+       return -1;
+   }
+   int lst=q.front();
+   q.pop();
+   return lst;
+}
+
+                                              /*returns the size of the queue q */
+int getSize(queue<int> &q)
+{
+    //Your code here
+    int s=q.size();
+    return s;
+}
+
+                                              /*returns the last element of the queue */
+int getBack(queue<int> &q)
+{
+	//Your code here
+	if(q.size()==0){
+       return -1;
+   }
+	int bk=q.back();
+	return bk;
+}
+
+                                              /*returns the first element of the queue */
+int getFront(queue<int> &q)
+{
+	//Your code here
+	if(q.size()==0){
+       return -1;
+   }
+	int ft=q.front();
+	return ft;
+}
+
+
+
+
+
